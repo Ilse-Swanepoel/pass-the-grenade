@@ -10,8 +10,7 @@ let player = 1
 document.getElementById('finalScore').innerHTML = finalScore
 
 function getRandomInt() {
-  let finalScore = 0
-  finalScore = Math.floor(Math.random() * 100)
+  let finalScore = Math.floor(Math.random() * 100)
   console.log(finalScore)
 }
 
@@ -56,10 +55,11 @@ function updateScore() {
   document.getElementById('score3').innerHTML = player3
   document.getElementById('score4').innerHTML = player4
   document.getElementById('totalScore').innerHTML = totalScore
+  document.getElementById('finalScore').innerHTML = finalScore
 }
 
 function checkScore() {
-  if (totalScore == finalScore) {
+  if (totalScore === finalScore) {
     console.log('end game')
     endGame()
   }
@@ -67,8 +67,6 @@ function checkScore() {
 
 function endGame() {
   console.log('Player Wins!')
-
-  startGame()
 }
 
 function startGame() {
@@ -78,5 +76,5 @@ function startGame() {
   player4 = 0
   totalScore = 0
   player = 1
-  updateScore()
+  getRandomInt()
 }
